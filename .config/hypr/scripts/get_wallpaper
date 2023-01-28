@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WALLPAPER_PATH="~/.config/hypr/wallpapers"
+WALLPAPER_PATH="$HOME/.config/hypr/wallpapers"
 
 cd $WALLPAPER_PATH
 
