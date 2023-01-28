@@ -13,3 +13,10 @@ The script depends on the following:
 - `wofi` to select how to screenshot, eg region or fullscreen
 - `wl-clipboard` to copy image to clipboard
 - `jq` to parse json from hyprctl
+
+## '.config'
+This folder contains the configs.
+Dependencies are:
+- `playerctl` for my waybar module  
+
+<sub>Tell me if i missed any dependencies. I might have forgotten some</sub>
