@@ -1,0 +1,104 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // top|left|bottom|right	
+    // "height": 10, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    // "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "custom/media",
+        "custom/cycle_wall",
+        "wlr/workspaces"
+    ],
+    "modules-center": [
+        "pulseaudio",
+        "cpu",
+        "memory",
+        "temperature",
+        "clock"
+    ],
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true,
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "custom/cycle_wall": {
+        "format": "{}",
+        "exec": "echo ''",
+        "on-click": "~/.config/hypr/scripts/tools/expand cycle",
+        "tooltip": false
+    },
+    "clock": {
+        "timezone": "Europe/Berlin",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%I:%M:%S}",
+        "format-alt": "{:%Y-%m-%d}",
+        "interval": 1
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false,
+        "interval": 2
+    },
+    "memory": {
+        "format": " {}%",
+        "interval": 2
+    },
+    "temperature": {
+        // "thermal-zone": 1,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "interval": 2
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ipaddr}/{cidr}",
+        "tooltip-format": " {ifname} via {gwaddr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "⚠ Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "ignored-sinks": [
+            "EasyEffects Sink"
+        ],
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "~/.config/hypr/scripts/ToggleSink.sh"
+    },
+    "custom/media": {
+        "exec": "~/.config/waybar/nowPlaying.sh",
+        "format": "{}",
+        "interval": 1,
+        "tooltip": false
+    }
+}

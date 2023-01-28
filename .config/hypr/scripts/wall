@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+swww_fork=~/.config/hypr/scripts/tools/swww
+
+if [[ $2 == "" ]]; then
+	__trans_pos=$(awk -v seed="$RANDOM" 'BEGIN {srand(seed); printf("%.10f\n", rand())}'),$(awk -v seed="$RANDOM" 'BEGIN {srand(seed); printf("%.10f\n", rand())}')
+else
+	__trans_pos=$2
+fi
+
+$swww_fork init
+$swww_fork img $1 --transition-type grow --transition-pos $__trans_pos --transition-duration 4

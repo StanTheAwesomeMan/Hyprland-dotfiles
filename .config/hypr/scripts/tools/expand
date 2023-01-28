@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+TEMP=/tmp/current_wall
+
+wallpath=/home/beacrox/.config/hypr/wallpapers
+
+hypr=/home/beacrox/.config/hypr
+scripts=$hypr/scripts
+
+case "$1" in
+    "cycle")
+        index=$(cat $TEMP)
+        index=$((index+1))
+        if [ $index -ge ${#files[@]} ]; then
+            index=0
+        fi
+        echo $index > $TEMP
+        $scripts/wall "$wallpath/$($scripts/get_wallpaper get)" "0.97,0.985"
+		sleep 1s
+        $scripts/get_wallpaper
+        ;;
+    *)
+		exit 0
+	;;
+esac

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+WALLPAPER_PATH="~/.config/hypr/wallpapers"
+
+cd $WALLPAPER_PATH
+
+if [[ $1 == "get" ]]; then
+	echo *
+	exit 0
+fi
+
+curl -o 'Wallpaper.png' $(curl 'https://wallhaven.cc/api/v1/search?purity=110&sorting=random&page=1&q=id:85387&categories=110' | jq ".data[0].path" -r)
+echo *
