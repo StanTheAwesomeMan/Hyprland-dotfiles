@@ -16,8 +16,8 @@ The script depends on the following:
 
 ## '.config'
 This folder contains the configs.  
-`starship.toml` is for the Starship OMZ (Oh my Zsh) prompt.
-Dependencies are:
+`starship.toml` is for the Starship OMZ (Oh my Zsh) prompt.  
+Dependencies for everything are:
 - `playerctl` for my waybar module  
 
 <sub>Tell me if i missed any dependencies. I might have forgotten some</sub>
