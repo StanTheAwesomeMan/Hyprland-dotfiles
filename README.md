@@ -15,7 +15,8 @@ The script depends on the following:
 - `jq` to parse json from hyprctl
 
 ## '.config'
-This folder contains the configs.
+This folder contains the configs.  
+`starship.toml` is for the Starship OMZ (Oh my Zsh) prompt.
 Dependencies are:
 - `playerctl` for my waybar module  
 
